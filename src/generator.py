@@ -102,8 +102,6 @@ class EncodingDataset(Dataset):
             self.samples.append(enc)
             self.c.append(c)
 
-            if idx == 20:
-                break
         self.samples = torch.cat(self.samples)
         self.c = torch.cat(self.c)
         self.D_enc = net.D_enc
