@@ -168,9 +168,7 @@ class CRsAERandProjClassifier(torch.nn.Module):
 
         self.relu = torch.nn.ReLU()
         self.classifier = torch.nn.Linear(self.D_enc, 10)
-
-        # set the classifier on the gpu
-        # to be done
+        self.classifier = self.classifier.to(self.device)
 
     def normalize(self):
         self.H.data = F.normalize(self.H.data, dim=0)
